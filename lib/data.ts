@@ -47,7 +47,7 @@ export const EXPERIENCE = [
     title: "Software Engineer",
     location: "KasedKhair for general supplies and contracting",
     description:
-      "I Worked as a software engineer for a construction company. I Developed an HR system using React, FastAPI, and PostgreSQL. I also developed a desktop app using PYQT, SQLite, and PostgreSQL to manage Company's Equipment in different construction sites.",
+      "I Worked as a software engineer for a construction company. I Developed an HR system using React, FastAPI, and PostgreSQL. I also developed a desktop app using PyQT, SQLite, and PostgreSQL to manage Company's Equipment in different construction sites.",
     icon: createElement(CgWorkAlt),
     date: "2021 - 2022",
   },
@@ -75,7 +75,7 @@ export const PROJECTS = [
     title: "Easy SRT Creator",
     description: `a Desktop app to streamline SRT subtitle file creation and editing, enhancing subtitling
       efficiency with Undo/Redo capabilities.`,
-    tags: ["Python", "PYQT", "PostgreSQL", "Desktop"],
+    tags: ["Python", "PyQT", "PostgreSQL", "Desktop"],
     imageUrl: genericImg,
     projectRepo: "",
   },
@@ -115,5 +115,5 @@ export const SKILLS = [
   "Python",
   "Django",
   "Fast API",
-  "PYQT",
+  "PyQT",
 ] as const;
