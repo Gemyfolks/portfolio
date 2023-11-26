@@ -64,7 +64,7 @@ export default function HeroSection() {
         <span className="font-bold">Hello, I'm Mohamed Khaled.</span> I'm a{" "}
         <span className="font-bold">Software Engineer</span> with{" "}
         <span className="font-bold">{years} years</span> of experience. I enjoy
-        building <span className="italic">sites, apps & tools</span>
+        building <span className="italic">sites, apps & tools.</span>
         {/* . My focus is{" "}
         <span className="underline">React (Next.js)</span>. */}
       </motion.h1>

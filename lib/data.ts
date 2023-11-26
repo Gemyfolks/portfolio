@@ -4,6 +4,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import genericImg from "public/generic-image.png";
 import portfolioImg from "public/portfolio.png";
 import TVNinjaImg from "public/tv-ninja.png";
+import NPMImg from "public/npm-logo.png";
 import { createElement } from "react";
 
 export const LINKS = [
@@ -91,7 +92,7 @@ export const PROJECTS = [
     title: "Orbix",
     description: `A modern utility library for typescript, with zero dependencies. It's a collection of useful functions and types that I use in my projects.`,
     tags: ["Typescript", "NPM", "WIP"],
-    imageUrl: genericImg,
+    imageUrl: NPMImg,
     projectRepo: "https://www.npmjs.com/package/orbix",
   },
 ] as const;
