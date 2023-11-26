@@ -87,6 +87,13 @@ export const PROJECTS = [
     imageUrl: portfolioImg,
     projectRepo: "https://github.com/Gemyfolks/portfolio",
   },
+  {
+    title: "Orbix",
+    description: `A modern utility library for typescript, with zero dependencies. It's a collection of useful functions and types that I use in my projects.`,
+    tags: ["Typescript", "NPM", "WIP"],
+    imageUrl: genericImg,
+    projectRepo: "https://www.npmjs.com/package/orbix",
+  },
 ] as const;
 
 export const SKILLS = [
