@@ -3,6 +3,7 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import genericImg from "public/generic-image.png";
 import portfolioImg from "public/portfolio.png";
+import TVNinjaImg from "public/tv-ninja.png";
 import { createElement } from "react";
 
 export const LINKS = [
@@ -63,16 +64,17 @@ export const EXPERIENCE = [
 export const PROJECTS = [
   {
     title: "TV Ninja",
-    description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["Python", "PostgreSQL", "Discord-Bot", "TVMDB", "OOP"],
-    imageUrl: genericImg,
-    projectRepo: "",
+    description: `a Discord bot enhancing the entertainment experience within the Discord platform, simplifying content
+      discovery, keeping users updated with their favorite shows.`,
+    tags: ["Python", "PostgreSQL", "Discord-Bot"],
+    imageUrl: TVNinjaImg,
+    projectRepo:
+      "https://discord.com/oauth2/authorize?client_id=820862005904146463&permissions=139586825280&scope=bot%20applications.commands",
   },
   {
     title: "Easy SRT Creator",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+    description: `a Desktop app to streamline SRT subtitle file creation and editing, enhancing subtitling
+      efficiency with Undo/Redo capabilities.`,
     tags: ["Python", "PYQT", "PostgreSQL", "Desktop"],
     imageUrl: genericImg,
     projectRepo: "",
