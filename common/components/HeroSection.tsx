@@ -12,7 +12,7 @@ import { useActiveSectionContext } from "common/providers";
 export default function HeroSection() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const years = new Date().getFullYear() - 2021; // Started working professionally on january 2021
+  const years = new Date().getFullYear() - 2020; // Started working professionally on january 2020
   return (
     <section
       ref={ref}
