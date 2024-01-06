@@ -12,7 +12,14 @@ import { useActiveSectionContext } from "common/providers";
 export default function HeroSection() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const years = new Date().getFullYear() - 2020; // Started working professionally on january 2020
+  let currentYear = new Date().getFullYear();
+  let currentMonth = new Date().getMonth();
+
+  let yearsExperience = currentYear - 2022; // Started working professionally on january 2022
+  let monthsExperience = currentMonth / 12;
+
+  let experienceYears =
+    Math.round((yearsExperience + monthsExperience) * 10) / 10;
   return (
     <section
       ref={ref}
@@ -63,8 +70,9 @@ export default function HeroSection() {
       >
         <span className="font-bold">Hello, I'm Mohamed Khaled.</span> I'm a{" "}
         <span className="font-bold">Software Engineer</span> with{" "}
-        <span className="font-bold">{years} years</span> of experience. I enjoy
-        building <span className="italic">sites, apps & tools.</span>
+        <span className="font-bold">{experienceYears} years</span> of
+        experience. I enjoy building{" "}
+        <span className="italic">sites, apps & tools.</span>
         {/* . My focus is{" "}
         <span className="underline">React (Next.js)</span>. */}
       </motion.h1>
