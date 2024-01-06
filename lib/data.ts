@@ -2,7 +2,6 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import genericImg from "public/generic-image.png";
-import portfolioImg from "public/portfolio.png";
 import TVNinjaImg from "public/tv-ninja.png";
 import NPMImg from "public/npm-logo.png";
 import { createElement } from "react";

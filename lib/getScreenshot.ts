@@ -11,7 +11,7 @@ export async function getScreenshotPlaywright(): Promise<string> {
   await page.goto(url, {
     waitUntil: "domcontentloaded",
   });
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 500));
   const screenshot = await page.screenshot();
   const screenshotBase64 = screenshot.toString("base64");
   await browser.close();
@@ -33,12 +33,11 @@ export async function getScreenshotPuppeteer(): Promise<string> {
   await page.goto(url, {
     waitUntil: "domcontentloaded",
   });
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const screenshot = await page.screenshot({
-    encoding: "base64",
-  });
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  const screenshot = await page.screenshot();
+  const screenshotBase64 = screenshot.toString("base64");
   await browser.close();
 
   const prefix = "data:image/png;base64,";
-  return `${prefix}${screenshot}`;
+  return `${prefix}${screenshotBase64}`;
 }
