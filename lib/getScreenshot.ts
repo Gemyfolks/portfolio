@@ -5,7 +5,7 @@ import { chromium } from "playwright";
 const url = "https://portfolio.mohamed-khaled.com/";
 
 export async function getScreenshotPlaywright(): Promise<string> {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ args: ["--no-sandbox"] });
   const page = await browser.newPage();
   await page.setViewportSize({ width: 1100, height: 800 });
   await page.goto(url, {
@@ -28,6 +28,7 @@ export async function getScreenshotPuppeteer(): Promise<string> {
       width: 1100,
       height: 800,
     },
+    args: ["--no-sandbox"],
   });
   const page = await browser.newPage();
   await page.goto(url, {
