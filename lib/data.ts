@@ -6,6 +6,7 @@ import portfolioImg from "public/portfolio.png";
 import TVNinjaImg from "public/tv-ninja.png";
 import NPMImg from "public/npm-logo.png";
 import { createElement } from "react";
+import axios from "axios";
 
 export const LINKS = [
   {
@@ -85,7 +86,9 @@ export const PROJECTS = [
     description:
       "Welcome to my creative universe! My journey has been a thrilling exploration of innovation, design, and problem-solving.",
     tags: ["React", "Next.js 14", "Tailwind", "Framer Motion"],
-    imageUrl: portfolioImg,
+    imageUrl: async () => {
+      return axios.get("/api/screenshot");
+    },
     projectRepo: "https://github.com/Gemyfolks/portfolio",
   },
   {

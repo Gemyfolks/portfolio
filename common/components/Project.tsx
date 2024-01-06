@@ -1,9 +1,8 @@
 "use client";
-
 import { useRef } from "react";
 import { PROJECTS } from "lib";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import ProjectImage from "./ProjectImage";
 
 type ProjectProps = (typeof PROJECTS)[number];
 
@@ -21,7 +20,6 @@ export default function Project({
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
   return (
     <motion.div
       ref={ref}
@@ -49,23 +47,7 @@ export default function Project({
               ))}
             </ul>
           </div>
-          <Image
-            src={imageUrl}
-            alt="Project I worked on"
-            quality={95}
-            className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-            transition 
-            group-hover:scale-[1.04]
-            group-hover:-translate-x-3
-            group-hover:translate-y-3
-            group-hover:-rotate-2
-
-            group-even:group-hover:translate-x-3
-            group-even:group-hover:translate-y-3
-            group-even:group-hover:rotate-2
-
-            group-even:right-[initial] group-even:-left-40"
-          />
+          <ProjectImage imageUrl={imageUrl} title={title} />
         </a>
       </section>
     </motion.div>
