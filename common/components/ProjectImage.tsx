@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import Skeleton from "./Skeleton";
 import { useProjectImage } from "common/hooks";
 import { ProjectImageType } from "common/types";
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import clsx from "clsx";
 
 function ProjectImage({ imageUrl }: { imageUrl: ProjectImageType }) {
