@@ -5,7 +5,12 @@ import { ProjectImageType } from "common/types";
 import { memo } from "react";
 import clsx from "clsx";
 
-function ProjectImage({ imageUrl }: { imageUrl: ProjectImageType }) {
+type ProjectImageProps = {
+  imageUrl: ProjectImageType;
+  projectRepo: string;
+};
+
+function ProjectImage({ imageUrl, projectRepo }: ProjectImageProps) {
   const { image, isError, isLoading, refetch } = useProjectImage(imageUrl);
 
   return (
@@ -35,6 +40,9 @@ function ProjectImage({ imageUrl }: { imageUrl: ProjectImageType }) {
         ) : null}
         {image ? (
           <Image
+            onClick={() => {
+              window.open(projectRepo, "_blank", "noopener,noreferrer");
+            }}
             className="w-[28.25rem] rounded-t-lg"
             src={image as StaticImageData}
             width={1130}

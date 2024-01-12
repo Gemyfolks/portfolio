@@ -43,6 +43,8 @@ export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.add("dark");
     }
   }, []);
 

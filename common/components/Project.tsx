@@ -33,7 +33,7 @@ export default function Project({
         {/* <a href={projectRepo} target="_blank" rel="noopener,noreferrer"> */}
         <div
           onClick={() => {
-            window.open(projectRepo, "_blank");
+            window.open(projectRepo, "_blank", "noopener,noreferrer");
           }}
           className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]"
         >
@@ -52,7 +52,7 @@ export default function Project({
             ))}
           </ul>
         </div>
-        <ProjectImage imageUrl={imageUrl} />
+        <ProjectImage imageUrl={imageUrl} projectRepo={projectRepo} />
         {/* </a> */}
       </section>
     </motion.div>
