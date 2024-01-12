@@ -76,7 +76,7 @@ export const PROJECTS = [
     title: "Easy SRT Creator",
     description: `a Desktop app to streamline SRT subtitle file creation and editing, enhancing subtitling
       efficiency with Undo/Redo capabilities.`,
-    tags: ["Python", "PyQT", "PostgreSQL", "Desktop"],
+    tags: ["Python", "PyQT", "Desktop"],
     imageUrl: genericImg,
     projectRepo: "",
   },
