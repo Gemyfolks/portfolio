@@ -3,7 +3,7 @@
 import { createSafeContext } from "common/utils";
 import React, { useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
+export type Theme = "light" | "dark" | null;
 
 type ThemeContextProviderProps = {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ type ThemeContextType = {
 export const [useTheme, ThemeProvider] = createSafeContext<ThemeContextType>();
 
 export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>(null);
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -44,6 +44,7 @@ export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
     } else {
+      setTheme("dark");
       document.documentElement.classList.add("dark");
     }
   }, []);

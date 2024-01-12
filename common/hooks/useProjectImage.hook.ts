@@ -1,7 +1,11 @@
+import { useTheme } from "common/providers";
 import { ProjectImageType } from "common/types";
 import { useCallback, useEffect, useState } from "react";
+import { useDebounce } from "./useDebounce.hook";
 
 export function useProjectImage(getter: ProjectImageType) {
+  const { theme } = useTheme();
+  const debouncedTheme = useDebounce(theme, 500);
   const [isLoading, setLoading] = useState(
     typeof getter === "object" ? false : true
   );
@@ -10,10 +14,10 @@ export function useProjectImage(getter: ProjectImageType) {
   );
   const [isError, setError] = useState<boolean>(false);
   const refetch = useCallback(() => {
-    if (typeof getter === "function" && !image) {
+    if (typeof getter === "function") {
       setLoading(true);
       setError(false);
-      getter()
+      getter(debouncedTheme)
         .then((res) => {
           if (res.status === 200) {
             setError(false);
@@ -27,11 +31,11 @@ export function useProjectImage(getter: ProjectImageType) {
           setLoading(false);
         });
     }
-  }, [getter, image]);
+  }, [getter, debouncedTheme]);
 
   useEffect(() => {
-    refetch();
-  }, [refetch]);
+    if (debouncedTheme) refetch();
+  }, [refetch, debouncedTheme]);
 
   return {
     isLoading,

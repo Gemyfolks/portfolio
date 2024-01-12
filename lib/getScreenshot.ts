@@ -19,7 +19,7 @@ const url = "https://portfolio.mohamed-khaled.com/";
 //   // return screenshotBase64;
 // }
 
-export async function getScreenshotPuppeteer(): Promise<string> {
+export async function getScreenshotPuppeteer(theme: string): Promise<string> {
   const browser = await puppeteer.launch({
     headless: "new",
     defaultViewport: {
@@ -29,13 +29,23 @@ export async function getScreenshotPuppeteer(): Promise<string> {
     args: ["--no-sandbox"],
   });
   const page = await browser.newPage();
+
+  const storage = { theme: theme };
+
+  await page.evaluateOnNewDocument((values) => {
+    for (const key in values) {
+      localStorage.setItem(key, values[key as keyof typeof values]);
+    }
+  }, storage);
+
   await page.goto(url, {
     waitUntil: "domcontentloaded",
   });
+
   await new Promise((resolve) => setTimeout(resolve, 500));
   const screenshot = await page.screenshot();
-  const screenshotBase64 = screenshot.toString("base64");
   await browser.close();
+  const screenshotBase64 = screenshot.toString("base64");
 
   const prefix = "data:image/png;base64,";
   return `${prefix}${screenshotBase64}`;

@@ -38,7 +38,7 @@ function ProjectImage({ imageUrl, projectRepo }: ProjectImageProps) {
         {isError || isLoading ? (
           <Skeleton refetch={refetch} isError={isError} />
         ) : null}
-        {image ? (
+        {image && !(isError || isLoading) ? (
           <Image
             onClick={() => {
               window.open(projectRepo, "_blank", "noopener,noreferrer");
