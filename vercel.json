@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
-    }
-  ],
   "functions": {
+    "api/**/*.ts": {
+      "memory": 3008,
+      "maxDuration": 30
+    },
     "api/**/*.js": {
-      "memory": 3008
+      "memory": 3008,
+      "maxDuration": 30
     }
   }
 }
