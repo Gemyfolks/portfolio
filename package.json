@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node node_modules/puppeteer/install.js && next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "node node_modules/puppeteer/install.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@react-email/components": "^0.0.11",
