@@ -14,13 +14,13 @@ export async function getScreenshotPuppeteer(theme: string): Promise<string> {
   });
   const page = await browser.newPage();
 
-  const storage = { theme: theme };
+  // const storage = { theme: theme };
 
-  await page.evaluateOnNewDocument((values) => {
-    for (const key in values) {
-      localStorage.setItem(key, values[key as keyof typeof values]);
-    }
-  }, storage);
+  // await page.evaluateOnNewDocument((values) => {
+  //   for (const key in values) {
+  //     localStorage.setItem(key, values[key as keyof typeof values]);
+  //   }
+  // }, storage);
 
   await page.goto(url, {
     waitUntil: "domcontentloaded",
