@@ -26,7 +26,7 @@ export async function getScreenshotPuppeteer(theme: string): Promise<string> {
     waitUntil: "domcontentloaded",
   });
 
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const screenshot = await page.screenshot();
   await browser.close();
   const screenshotBase64 = screenshot.toString("base64");
